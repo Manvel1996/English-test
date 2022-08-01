@@ -1,4 +1,4 @@
-import React, {  useReducer, useState } from 'react';
+import React, {  useReducer } from 'react';
 import './App.scss';
 import Reducer from './Reducer/Reducer';
 import Welcome_sppech from './Start/Welcome_sppech';
@@ -7,7 +7,6 @@ import Welcome_sppech from './Start/Welcome_sppech';
 export const dispatcher = React.createContext()
 
 function App() {
-  const[version,setVersion] = useState()
 
   const[state,dispatch] = useReducer(Reducer,{
    initialState: <Welcome_sppech/>,
