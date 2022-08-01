@@ -3,7 +3,7 @@ import { dispatcher } from '../App'
 
 export default function WelcomeSppech() {
 
-const [state,dispatch] = useContext(dispatcher)
+const [,dispatch] = useContext(dispatcher)
 
 
   return (
