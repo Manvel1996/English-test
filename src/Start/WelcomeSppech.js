@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { dispatcher } from '../App' 
 
-export default function Welcome_sppech() {
+export default function WelcomeSppech() {
 
 const [state,dispatch] = useContext(dispatcher)
 

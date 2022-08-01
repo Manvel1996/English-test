@@ -1,7 +1,7 @@
 import React, {  useReducer } from 'react';
 import './App.scss';
 import Reducer from './Reducer/Reducer';
-import Welcome_sppech from './Start/Welcome_sppech';
+import WelcomeSppech from './Start/WelcomeSppech';
 
 
 export const dispatcher = React.createContext()
@@ -9,7 +9,7 @@ export const dispatcher = React.createContext()
 function App() {
 
   const[state,dispatch] = useReducer(Reducer,{
-   initialState: <Welcome_sppech/>,
+   initialState: <WelcomeSppech/>,
    wrong_answer:false,
    correct_answer:false,
    counter:0,

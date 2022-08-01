@@ -1,5 +1,5 @@
 import React from 'react'
-import Welcome_sppech from '../Start/Welcome_sppech';
+import WelcomeSppech from '../Start/WelcomeSppech';
 import A from '../Alphabet/A/A';
 import B from '../Alphabet/B/B';
 import C from '../Alphabet/C/C';
@@ -56,7 +56,7 @@ import Z2 from '../Alphabet/Z/Z2';
 
 export default function Reducer(state,action){
     if(action.type === "start"){
-        return {...state, initialState: <Welcome_sppech />}
+        return {...state, initialState: <WelcomeSppech />}
     }
     else if(action.type === "correct_answer"){
         return{
