@@ -53,8 +53,10 @@ import W2 from '../Alphabet/W/W2';
 import X2 from '../Alphabet/X/X2';
 import Y2 from '../Alphabet/Y/Y2';
 import Z2 from '../Alphabet/Z/Z2';
+import EgnlishWords from '../English words/EgnlishWords';
 
 export default function Reducer(state,action){
+    let randomNum = Math.floor(Math.random()*3 + 1)
     if(action.type === "start"){
         return {...state, initialState: <WelcomeSppech />}
     }
@@ -65,7 +67,20 @@ export default function Reducer(state,action){
             wrong_answer:false}
     }
     else if(action.type === "wrong_answer"){
-        return{...state,wrong_answer: action.payload}
+        return{
+            ...state,
+            wrong_answer: action.payload}
+    }
+    else if(action.type === "RandomWords"){
+        return{...state,initialState: <EgnlishWords />}
+    }
+    else if(action.type === "trueWord"){
+        if(state.words.length > state.random + randomNum){
+            return {...state,random:state.random+randomNum,correct_answer:false}
+        }
+        else if(state.words.length <= state.random + randomNum){
+            return {...state,random:0,correct_answer:false}
+        }
     }
     else if(action.type === "counter"){
         return{...state,counter:state.counter + 1}

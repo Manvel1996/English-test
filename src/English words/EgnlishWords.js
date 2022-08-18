@@ -2,14 +2,18 @@ import React, { useContext } from 'react'
 import {  dispatcher } from '../App'
 import { v4 as uuidv4 } from 'uuid';
 
-export default function LogicFunc2(letter,next_letter,engLetter,back_button,arr_letters) {
+
+export default function EgnlishWords() {
     const [state,dispatch] = useContext(dispatcher)
 
+  
+
+
     function clickVersion(e){
-        if(e.target.innerText === letter){
+        if(e.target.innerText === state.words[state.random].correctWord){
             dispatch({type:"correct_answer"})
             setTimeout(()=>{
-                dispatch({type:next_letter})
+                dispatch({type:"trueWord"})
             },1000)
         }
         
@@ -22,16 +26,14 @@ export default function LogicFunc2(letter,next_letter,engLetter,back_button,arr_
         }
       }
 
-
   return (
     <div>
-        <p>Ինչպես է հնչում <span>{engLetter}</span> տառը  </p>
+        <p>Ինչպես է անգլերենում գրվում <span>{state.words[state.random].armVersion}</span> </p>
+        <p>Կարդացվում է <span>{state.words[state.random].englishVersion}</span></p> 
         <p>Դուք սխալվել եք <span>{state.counter}</span> անգամ</p>
-        <div className='alphabet-board' onClick={(e)=>clickVersion(e)}>
-            {arr_letters.map(el=><h2 key={uuidv4()}>{el}</h2>)}
+        <div className='words-board' onClick={(e)=>clickVersion(e)}>
+            {state.words[state.random].versions.map(el=><h2 key={uuidv4()}>{el}</h2>)}
         </div>
-        <button onClick={()=>dispatch({type:back_button})}>Նախորդը</button>
-        <button onClick={()=>dispatch({type:next_letter})}>Հաջորդը</button>
         <button onClick={()=>dispatch({type:"start"})} className="startButton">Սկիզբ</button>
     </div>
   )

@@ -1,5 +1,6 @@
 import React, {  useReducer } from 'react';
 import './App.scss';
+import { arrWords } from './English words/WordsArr';
 import Reducer from './Reducer/Reducer';
 import WelcomeSppech from './Start/WelcomeSppech';
 
@@ -12,6 +13,8 @@ function App() {
    initialState: <WelcomeSppech/>,
    wrong_answer:false,
    correct_answer:false,
+   words: arrWords,
+   random: Math.floor(Math.random()*10),
    counter:0,
   });
 
