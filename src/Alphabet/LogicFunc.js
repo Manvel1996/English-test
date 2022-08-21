@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import {  dispatcher } from '../App'
 import { v4 as uuidv4 } from 'uuid';
 
+
 export default function LogicFunc(letter,next_letter,armLetter,back_button,arr_letters) {
     const [state,dispatch] = useContext(dispatcher)
 

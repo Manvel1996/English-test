@@ -12,12 +12,14 @@ body{
 }
 .app {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
   background-image: none;
   transition: all 500ms ease-in-out;
+  
   .block_none{
     position: absolute;
     font-size: 110px;
@@ -79,6 +81,13 @@ body{
     &:hover{
       opacity: 40%;
     }
+  }
+  .muteButton{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: -5px;
+    top: 65px;
   }
   .finish{
     margin-top: 100px;
